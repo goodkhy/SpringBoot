@@ -14,6 +14,7 @@ import java.util.Map;
 
 /**
  * @author Binary Wang
+ * 处理当用户向公众号发送消息时的回复
  */
 @Component
 public class MsgHandler extends AbstractHandler {
@@ -38,7 +39,7 @@ public class MsgHandler extends AbstractHandler {
     }
 
     //TODO 组装回复消息
-    String content = "回复信息内容";
+    String content = "你个大傻逼";
     return new TextBuilder().build(content, wxMessage, weixinService);
 
   }

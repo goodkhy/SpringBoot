@@ -1,6 +1,5 @@
 package com.chenkh.boot.wechat.service;
 
-import com.chenkh.boot.wechat.config.WxMpConfig;
 import com.chenkh.boot.wechat.handler.*;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.mp.api.WxMpInMemoryConfigStorage;
@@ -39,9 +38,6 @@ public class WeixinService extends WxMpServiceImpl {
   protected StoreCheckNotifyHandler storeCheckNotifyHandler;
 
   @Autowired
-  private WxMpConfig wxConfig;
-
-  @Autowired
   private LocationHandler locationHandler;
 
   @Autowired
@@ -61,10 +57,10 @@ public class WeixinService extends WxMpServiceImpl {
   @PostConstruct
   public void init() {
     final WxMpInMemoryConfigStorage config = new WxMpInMemoryConfigStorage();
-    config.setAppId(this.wxConfig.getAppid());// 设置微信公众号的appid
-    config.setSecret(this.wxConfig.getAppsecret());// 设置微信公众号的app corpSecret
-    config.setToken(this.wxConfig.getToken());// 设置微信公众号的token
-    config.setAesKey(this.wxConfig.getAesKey());// 设置消息加解密密钥
+    config.setAppId("wx1a8e2e638bf2bab9");// 设置微信公众号的appid
+    config.setSecret("3dd6079c6e9cccc06e4c5d2f8f094283");// 设置微信公众号的app corpSecret
+    config.setToken("chenkaihua");// 设置微信公众号的token
+    config.setAesKey("LZc0RlgKO9t3IUO3yga3d2Kz0LVo04W3nmWIGjnFKYZ");// 设置消息加解密密钥
     super.setWxMpConfigStorage(config);
 
     this.refreshRouter();
