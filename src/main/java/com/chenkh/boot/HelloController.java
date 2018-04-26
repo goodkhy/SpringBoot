@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String getHello() {
-        return "spring-boot-start";
+        return "hello,欢迎来到你凯哥的私人网站";
     }
 }
